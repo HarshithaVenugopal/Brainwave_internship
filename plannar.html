@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Day Planner with Time Slots</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>YOUR COMPLETE DAY PLANNER 📅</h1>
+  <p>Like to add a new task to your list?</p>
+  <hr class="thick-line">
+  <div class="container">
+    <img src="C:\Users\harsh\OneDrive\Desktop\FSD\calendar2.png" alt="calendar">
+    <img src="C:\Users\harsh\OneDrive\Desktop\FSD\calendar.png" alt="calendar2">
+    <h2 style="color:  #69a2e3">Add Tasks Here</h2>
+    <form id="task-form">
+        <input type="text" id="task-input" placeholder="Enter task..." required />
+        <input type="date" id="task-date" required />
+        <select id="task-time" required>
+          <option value="">Time</option>
+          <script>
+            for (let h = 7; h <= 20; h++) {
+              let hour12 = h % 12 === 0 ? 12 : h % 12;
+              let ampm = h < 12 ? 'AM' : 'PM';
+              let display = `${hour12}:00 ${ampm}`;
+              document.write(`<option value="${h}">${display}</option>`);
+            }
+          </script>
+        </select>
+        <button type="submit">Add</button>
+      </form>
+      
+    <ul id="task-list"></ul>
+    <img id="img1" src="C:\Users\harsh\OneDrive\Desktop\FSD\clock.png" alt="Clock">
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
